@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this software when using the replay code or numerical inputs."
+type: software
+title: "Quality, Queue, and Radio Information for Wireless Edge–Cloud LLM Routing"
+authors:
+  - family-names: Park
+    given-names: Sangdon
+  - family-names: Lee
+    given-names: Joohyung
+repository-code: "https://github.com/Sangdon-Park/wireless-llm-routing"
+license: MIT
+version: 1.8.0
+date-released: 2026-09-26

@@ -1,0 +1,17 @@
+{
+ "schema": "fresh450_deviations_v1",
+ "deviations": [
+  {
+   "id": 1,
+   "at": "2026-09-25T13:45:21.262445+00:00",
+   "found": "After build_bank, before any replay or analysis output: confirm.py excludes tasks by the assembly replay_ready flag, which is also false for tasks with an unresolved grade. The declared rule (executor_commitment.declared_rules) excludes only tasks failing record verification/conversion and replays unresolved grades at the bound midpoint.",
+   "affected_tasks": [
+    "mbpp_785",
+    "mbpp_511"
+   ],
+   "resolution": "Primary analysis follows the declared rule using private/bank_declared.json.gz (replay_ready recomputed as no cell error; frozen confirm.py unchanged). The frozen-code behaviour on private/bank.json.gz (448 tasks) is reported as a secondary analysis with 200 bootstrap replicates.",
+   "bank_declared_sha256": "e31e9df663185d0331108f0ddcccee5eb1b3e53fd0a3b41eb69eb4a4c10c871f",
+   "bank_sha256": "cfc5f4d13fe4890f200fa5eefad87704763a1f84f323ad9be8c3d2eaf52ca7a8"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "schema": "fresh450_confirmation_commitment_v1",
+ "status": "ANALYSIS_PLAN_FROZEN; EXECUTOR_NOT_READY; UNSEALING_NOT_AUTHORIZED",
+ "written_utc": "2026-09-25",
+ "author_context": "Written without reading fresh_inventory/acquisition_v2/run/sealed or any fresh450 response, grade, latency, fee, token, or judge content. Only acquisition metadata (BLINDING.md, STATE.json blinded_acquisition/blinding_incident entries, confirmation_assembly checkpoints) was read.",
+ "purpose": "One-shot confirmation, on the 450 reserved fresh tasks, of the information-value claims of the manuscript 'Quality, Queue, and Radio Information for Wireless Edge-Cloud LLM Routing'.",
+ "population": {
+  "tasks": "450 reserved tasks: 150 native multi-turn IFBench, 150 XSum, 150 MBPP (train/validation), with 900 paired responses and 600 summary-judge captures as acquired.",
+  "caveat": "Not an IID replication of the 225-task evaluation bank: IFBench is multi-turn and cohorts differ. Claims are stated for this population only.",
+  "unit_of_inference": "Whole task (all turns, both routes, all attempts, all judges). Never split turns, routes, or judges into independent observations."
+ },
+ "frozen_methods": {
+  "controllers": "qbr/information_value.py spec(): intrinsic, utility@b12, shortfall@b12, cq (kappa=0.5), fpi (Eq. 4), cq_release, mean_cq, mean_release, oracle_cq, always_edge, always_cloud. No coefficient, weight, or threshold may change.",
+  "source_sha256": {
+   "qbr/information_value.py": "b6f23c6a8da81bf05fc91cb7a5a36934d27aab27d4b6e8c3a28ef5fd8368e4fd",
+   "qbr/policy.py": "1261e149b6cdee615eafeeec6f0235995a33a085b0f906225de3f7e47e4f129e",
+   "qbr/replay.py": "a9253c203da834d8f8b6d749bc6e157fd38cb652956e45dad7dd247c9b551dff",
+   "qbr/radio.py": "dc747adff34471dacebf89012780cd2115448e6ee819073762b38c9d6a7c3bda",
+   "qbr/data.py": "32e8743b1498213c9070c913c8bf284df86387ef21c741f2aa46578bb1d600af"
+  },
+  "service_statistics": "Calibration serving state data/serving_state.npz (sha256 0d261b9d84ecbbec30d15291cb0b7bc7dc4e53e299ec6101e0590426e85a058f) is reused unchanged for waits, residuals, fees, mean bits, and arrival normalisation. It is not refitted on fresh data.",
+  "predictors": "CARROT-KNN-SBERT and the quantile-forest Mean model exactly as trained on the 660 calibration tasks. Fresh-prompt inference code and trained-artifact hashes MUST be appended in executor_commitment before unsealing (see prerequisites).",
+  "radio_and_traffic": "data/config.json (sha256 6798cba770ab3c70a0b861c7c3b4e9f035e8c3ce5a6a75e659a6d630018029a0): 12 conditions, 20 seeds 23924000-23924019, beta=12, gamma=1000; load sweep rho {0.35,0.5,0.65,0.8,0.9}; payload scales {1,4,8,12}; one serial edge slot.",
+  "achieved_cost": "L + 12*max(q - realized quality, 0) + 1000*all charged fees, with the acquisition's quality scoring contracts; empty answers score zero.",
+  "source_location": "frozen_source/"
+ },
+ "confirmatory_hypotheses": [
+  {
+   "id": "H1",
+   "claim": "Queue state has value that grows with load.",
+   "test": "Shortfall-Queue minus Intrinsic at rho=0.9 (primary radio, four edge slots) is negative, and its magnitude exceeds that at rho=0.35.",
+   "decision": "Confirmed if the task-cluster bootstrap 95% interval of the rho=0.9 difference is below zero AND the interval of (rho=0.9 difference minus rho=0.35 difference) is below zero."
+  },
+  {
+   "id": "H2",
+   "claim": "Quality information has larger headroom than any rule refinement.",
+   "test": "Oracle-Queue minus CARROT-Queue (12 conditions) is negative and larger in magnitude than |CARROT-Queue minus Utility-Queue|.",
+   "decision": "Confirmed if the oracle interval is below zero and its upper bound is below minus the absolute point estimate of CARROT-Queue minus Utility-Queue."
+  },
+  {
+   "id": "H3",
+   "claim": "Radio value is governed by nominal airtime load.",
+   "test": "Mean-Radio minus Mean-Queue at payload scale 12 (100 kHz) is negative; at payload scale 1 its absolute relative change is below 0.7%.",
+   "decision": "Confirmed if the scale-12 interval is below zero and the scale-1 interval lies within +/-0.7% of Mean-Queue cost."
+  },
+  {
+   "id": "H4",
+   "claim": "Load-derived kappa (FPI) beats fixed kappa=0.5 with one serial edge slot (exploratory on the old bank).",
+   "test": "FPI-Queue minus CARROT-Queue, one serial edge slot, 12 conditions.",
+   "decision": "Confirmed if the interval is below zero. Not confirmed otherwise; reported either way."
+  }
+ ],
+ "descriptive_only": [
+  "CARROT-Queue minus Utility-Queue at matched beta in {4,8,12,16,24,36}; expected sign changes are reported, not tested.",
+  "CARROT-Radio minus CARROT-Queue across payload scales and the paired radio decision diagnostic.",
+  "All Table I rows and serial-edge column."
+ ],
+ "inference": {
+  "primary": "Task-cluster bootstrap: 2000 resamples of whole tasks within service strata, each resample replayed on the 12 conditions (or stated sweep) with two fixed traffic seeds 23924000/1; percentile 95% intervals.",
+  "secondary": "Paired t intervals over 20 traffic seeds conditional on the task set, reported alongside.",
+  "multiplicity": "Four confirmatory hypotheses; each is judged at its own 95% interval and the family result is reported as the count confirmed out of four, without selective emphasis."
+ },
+ "exposure_handling": {
+  "known_exposed_ids": [
+   "ifbench_multiturn_ifbench_2473",
+   "ifbench_multiturn_ifbench_3018",
+   "xsum_38693675"
+  ],
+  "exposure_ledger_sha256": "803dc3d27a27ca17c289ac002e5a5fa495f4c834005cc68e3104263a2b34afb5",
+  "primary_scope": "All 450 tasks (no exposure-based exclusion; the full extent of the 2026-09-23 incident is unknown).",
+  "sensitivity_scope": "447 tasks excluding the three known exposed IDs; reported next to the primary scope. Neither scope is described as pristine.",
+  "rationale": "The controllers, weights, and hypotheses above were fixed from the old 225-task bank and never tuned on fresh content; exposure could bias only through the analyst, whose choices are frozen here."
+ },
+ "prerequisites_before_unsealing": [
+  "P1 Grading executor completed and validated on authored fixtures only: IFBench multi-turn verifier, MBPP withheld-test sandbox (the code normalizer is recorded as blocked), and fixed summary-judge parsing. Hashes appended to executor_commitment.",
+  "P2 Transfer of raw acquisition records into replay profiles (chunks, bytes, service times, retries, fees) integrated and tested on synthetic fixtures; hashes appended.",
+  "P3 Fresh-prompt predictor inference (CARROT embeddings/KNN, forest features) and its timing measurement fixed and hashed, including the multi-turn prompt view.",
+  "P4 An append-only exposure receipt stating who opens the sealed store, when, and for which frozen executor hashes.",
+  "P5 An explicit unsealing decision by the researcher after reviewing P1-P4."
+ ],
+ "after_unsealing": "Single execution of the frozen pipeline. Any bug fix after unsealing is a recorded deviation with before/after results both reported. No new controllers, weights, conditions, or hypotheses are added to the confirmatory set.",
+ "executor_commitment": null,
+ "publication": {
+  "representation": "public_export",
+  "export_date": "2026-09-27",
+  "archived_record_sha256": "7ddf7b6de9ac9a90463a1f9759e2599ba390f73db8b85a46e4e825cac12db96f",
+  "note": "Host paths and repository revision references are normalized for publication. Recorded dates describe the archived record, not this export. See publication_manifest.json for archived and public checksums."
+ }
+}

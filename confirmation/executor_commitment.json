@@ -1,0 +1,91 @@
+{
+ "schema": "fresh450_executor_commitment_v1",
+ "analysis_commitment": "commitment.json",
+ "analysis_commitment_sha256": "ba08b692d1d27f7bcdffa91dcfa6f6ce22e23a24671b71d447baffd4a606c929",
+ "executor_sha256": {
+  "fresh_bank.py": "baa60ced95b81a53595644ea434c050f7c6a1f5414530286c3b841daf07ba1bf",
+  "make_traces.py": "b24b2b5d1e36c61dcb44112ca1bed692ea3e438dbca530c6f3fd747f1646b400",
+  "predict_carrot.py": "a038ffd1294e5d284369a4b669df97183473be2bf01e97b4a56643693a58a5be",
+  "predict_forest.py": "146a269a170948e4505398429daa817400cf68b36b79de36e3dc3cd0bbd9c74d",
+  "build_bank.py": "3a3dea8cd4c7cce45c2f317da0ea8a2fa00b9929881259d923ab8123d276ed56",
+  "grade_dialogue.py": "a7bde07c640c68a017c48b37e4667abdb92876ed7cdb06584a1341b51e88019e",
+  "confirm.py": "5141bf59349e266daab6507513d3c32ef9bea2cc51d1d1a9db338f59e0292b19",
+  "make_synthetic_bank.py": "13c51ca953b54cc2d2628c6a7be19e68b7a35d063a7f2df17bb74e1cf85fba3b",
+  "validate_code_grader.py": "83047d688c4214ffc8add1940ad19a33766973944e81cebf079dd45c396f2766",
+  "predictions/traces.npz": "a04163af6aae6bd21fe6a0ba684668c29dd009558041ffec47fdf68758207577",
+  "predictions/prompts.json": "54e757b375ffac43dd6b170505d46468c26a3a6c5faeaf2fd7b4052b7ade9aee",
+  "predictions/carrot.npz": "36d9f50e60204bc255bf4cecd2c6ee4c87cc4d08d389dbb453230790d9bc864b",
+  "predictions/forest.npz": "d204daf7694184c6b46294320b277ab2fdec518e1b3fe6bdfb75b9c23bc64c29",
+  "predictions/carrot_receipt.json": "707921a9cfbc9fecefde6b7c5cf72be934ddd756e0744ccb0699941f598bc87f",
+  "predictions/forest_receipt.json": "d823ccfb9f1674f716d387cee1baefedfe997b89c4a3f345089adbf406f6b033",
+  "validation/code_grader.json": "e94101d739c27877b8dcc6b7ce040d85e6087f8fe5b8d7046d580a57853f734d",
+  "paths.py": "c51cd3ff997bcd588980319d2bd5169d0a645cc182e3e53d5a34900f13f47a4c"
+ },
+ "dependency_sha256": {
+  "private-workspace/research-workspace/wcl_goal_20260923/confirmation_assembly_20260924/assembly.py": "ee3bbaedd44f20c5de2922411e246512f5dc03de324e159611eb04eb4de0c664",
+  "private-workspace/research-workspace/wcl_goal_20260923/confirmation_assembly_20260924/summary_adapter.py": "9f21eb3b011dfceab988664e4a05260d2e07c9b69fbf408c66ba4f93169408d1",
+  "private-workspace/research-workspace/wcl_goal_20260923/confirmation_assembly_20260924/dialogue_adapter.py": "eee74be12e1154033be0446f894e4bb716cb7862946b941c204d065fafffe126",
+  "private-workspace/research-workspace/wcl_goal_20260923/sealed_grader_preflight_20260924/adapter.py": "5a4b2f2e3024e40deaea4cd88745291e9d7707c9f7e821c5bf23a5b3c01ddc10",
+  "private-workspace/research-workspace/wcl_goal_20260923/sealed_grader_preflight_20260924/host.py": "daf848f5042b01f2abb766cf7b74793b7389a6eb628b0323d3cc76b192dc7429",
+  "private-workspace/research-workspace/wcl_goal_20260923/sealed_grader_preflight_20260924/guest_wrapper.py": "8f798297dc0117407a6a99d59a4d0fe478e4bba9224d5cd27001ae3ce8301929",
+  "private-workspace/wcl_redesign_2026-09-20/ifbench_runtime_preflight_v1/runtime/evaluation_lib.py": "e681a4b03a6a9dfb540fbd9ef6b963de503a5ffac557ed611c326ee385850cf6",
+  "private-workspace/wcl_redesign_2026-09-20/external_native_comparison_v1/carrot_model.npz": "4ed288233966c0604d20f6ce5936679e67a90823ca50505ad711549855c8e0ab",
+  "private-workspace/research-workspace/code/wcl_redesign/external_native_gpu_v1.py": "d92cf66ba6368dd3845ac0d7f145b3344db4926157effc12396ab831a8acbcc8",
+  "private-workspace/research-workspace/code/wcl_redesign/calibrated_followup_study.py": "5e8bb21a5546d45a9c155ea9e07a406dba059f04300362db88c0edd10d8f8c06",
+  "private-workspace/wcl_redesign_2026-09-20/current_external_raw_quality_ablation_v1/dialogue.joblib": "f8bf60a86a654f58bc238c67fdca93b9d26d7701194903a5fc801aeada299ce8",
+  "private-workspace/wcl_redesign_2026-09-20/current_external_raw_quality_ablation_v1/summary.joblib": "3cea7b6a2a467cc1184b959a5c8d8ff04d0ea4c9ce2d9c85725ebf43988ca17e",
+  "private-workspace/wcl_redesign_2026-09-20/current_external_raw_quality_ablation_v1/code.joblib": "fa5517f13c4e7049487fa313df172e73b326f00747988f3f686b411574fe593d"
+ },
+ "grade_contract": {
+  "schema": "fresh450_grade_contract_v1",
+  "dialogue": "IFBench strict fraction via dialogue_adapter",
+  "summary": "two judges .50/.35/.15 over 0..4 averaged; empty answer 0; missing judge -> bounds",
+  "code": "restricted WASI S adapter: pass 1, test_failure 0, invalid_program 0, others unresolved; no normalizer",
+  "established_answer": "terminal_status != transport_failed",
+  "replay_quality": "midpoint of bounds (primary)",
+  "usage": "known token totals when unresolved"
+ },
+ "grade_contract_sha256": "f983b9ac7c69fa61c241e79405a6e58a765eb492b14749770e1913fa9b77a3cd",
+ "prerequisites": {
+  "P1": {
+   "status": "done",
+   "dialogue": "150 tasks x 3 synthetic answers: 450 scored, 0 evaluator errors (semantic runtime, pinned IFBench runtime)",
+   "summary": "authored assembly/summary/dialogue/judge-bundle tests: 28 passed",
+   "code": {
+    "canonical_pass": 147,
+    "canonical_unsupported": [
+     "mbpp_593",
+     "mbpp_727",
+     "mbpp_774"
+    ],
+    "wrong_test_failure": 150
+   },
+   "code_note": "Three canonical solutions end as infrastructure_unsupported (guest stderr); such outcomes are unresolved [0,1], never zero."
+  },
+  "P2": {
+   "status": "done",
+   "note": "build_bank.py uses the reviewed assembly.verify_bundle/replay_response/paired_task; end-to-end replay and analysis validated on a synthetic bank built from OLD public responses (private_synthetic, synthetic/ outputs)."
+  },
+  "P3": {
+   "status": "done",
+   "note": "CARROT and forest predictions for all 450 prompts computed before unsealing; both pipelines reproduce the published OLD predictions exactly (max error 0). Per-request timing measured on 20 fixed traffic traces (CARROT RTX 5090 float32, forest CPU)."
+  }
+ },
+ "declared_rules": {
+  "unresolved_quality": "replay quality = midpoint of bounds (primary); low and high bounds as sensitivity (20-seed t intervals)",
+  "non_replayable_tasks": "tasks with any cell failing record verification or conversion are counted and reported, and excluded from replay traffic (no trustworthy timing/bytes); no outcome-based exclusion",
+  "prediction_runtime": "per-task mean of the measured per-request runtimes over the 20 timing traces",
+  "h2_point": "absolute bootstrap mean of CARROT-Queue minus Utility-Queue",
+  "h3_relative": "(Mean-Radio minus Mean-Queue)/Mean-Queue per replicate, interval within [-0.7%, +0.7%]",
+  "bootstrap": "2000 replicates, whole-task resampling within services, master seed 2026092501, traffic seeds 23924000/1",
+  "exposure_sensitivity": "20-seed t intervals excluding the three known exposed task ids",
+  "deviations": "any post-unsealing fix is recorded with before/after results"
+ },
+ "outcomes_read": false,
+ "publication": {
+  "representation": "public_export",
+  "export_date": "2026-09-27",
+  "archived_record_sha256": "6ddd7de1bbc2b918f8b98be1757f27e6a876d6ce98eca0c58be179d8ceb9b291",
+  "note": "Host paths and repository revision references are normalized for publication. Recorded dates describe the archived record, not this export. See publication_manifest.json for archived and public checksums."
+ }
+}

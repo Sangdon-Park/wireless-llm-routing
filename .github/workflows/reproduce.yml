@@ -1,0 +1,23 @@
+name: Reproduce
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python reproduce.py verify
+      - run: python information_value.py --verify
+      - run: python confirmation/verify_confirmation.py
+      - run: python reproduce.py replay --seeds 23924000 --workers 2 --output outputs/smoke
+      - run: python -m unittest test_strengthening -v
+      - run: python strengthening_summary.py
+      - run: python information_controls.py verify
+      - run: python -m unittest test_information -v
+      - run: python information_controls.py replay --conditions primary bandwidth_10000 --seeds 23924000 --workers 2 --output outputs/information-smoke

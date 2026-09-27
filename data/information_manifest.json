@@ -1,0 +1,90 @@
+{
+  "study": "Information-matched controls and full-score ablations",
+  "retrospective": true,
+  "task_pairs": 225,
+  "new_model_responses": 0,
+  "methods": [
+    "carrot_queue",
+    "carrot_radio",
+    "routellm_score_queue",
+    "routellm_score_radio",
+    "mean_release",
+    "calibrated_release",
+    "carrot_release",
+    "routellm_score_release",
+    "mean_static",
+    "mean_intrinsic",
+    "carrot_static",
+    "carrot_intrinsic"
+  ],
+  "runs": 2880,
+  "release_plan_utc": "2026-09-23T10:16:12.331720+00:00",
+  "attribution_plan_utc": "2026-09-23T10:32:53.756718+00:00",
+  "original_radio_screen_passed": false,
+  "release_candidate_passed": false,
+  "release_gate": "The single prechosen mean_release candidate must have lower equal12 cost than old radio_mean and both release-aware external controls, with paired traffic-seed t95 upper bounds below zero. Its primary mean must not exceed radio_mean, and its 10kHz cost difference versus mean must have a below-zero t95 interval. Report every arm/condition. Failure does not promote a different arm or change parameters. A pass only permits fresh task confirmation; it is not publication readiness.",
+  "no_candidate_promoted": true,
+  "scope": "20 paired traffic seeds, 12 original conditions, fixed 225 task bank; intervals do not establish independent-task generalization.",
+  "adapter": "RouteLLM-score is a constructed calibration-only 1D KNN quality adapter, not native RouteLLM. Original prediction times plus separately recorded per-query adapter time are charged.",
+  "static_ablation": "Static removes w*(1+kappa*mu) but retains kappa*v/2; Intrinsic removes both. Static degradation is not used as the main gain.",
+  "concurrency_probe": "36 cells, four requests each, 12 reused calibration tasks, two providers, widths 1/2/4 and two repeats. Single-attempt cap4096. Separate endpoint diagnostic, not policy validation or a replacement response bank. CSV includes explicitly labeled descriptive independent-replica counterfactuals; those are not measurements.",
+  "fit": [
+    {
+      "service": "dialogue",
+      "n": 320,
+      "k": 128,
+      "cv_mse": {
+        "1": 0.4521701388888889,
+        "2": 0.3324544270833333,
+        "4": 0.2733235677083333,
+        "8": 0.24240383572048607,
+        "16": 0.22286054823133677,
+        "32": 0.21179521348741318,
+        "64": 0.2115541034274631,
+        "128": 0.20915061367882623
+      }
+    },
+    {
+      "service": "summary",
+      "n": 170,
+      "k": 32,
+      "cv_mse": {
+        "1": 0.024544117647058824,
+        "2": 0.017852251838235297,
+        "4": 0.014079819623161767,
+        "8": 0.012714385986328125,
+        "16": 0.012113821141860067,
+        "32": 0.011769316056195429,
+        "64": 0.011835761042202221,
+        "128": 0.011791114680907303
+      }
+    },
+    {
+      "service": "code",
+      "n": 170,
+      "k": 128,
+      "cv_mse": {
+        "1": 0.12058823529411765,
+        "2": 0.08970588235294118,
+        "4": 0.07518382352941176,
+        "8": 0.06056985294117647,
+        "16": 0.060317095588235295,
+        "32": 0.05916245404411765,
+        "64": 0.05755615234375,
+        "128": 0.05687902113970588
+      }
+    }
+  ],
+  "original_source_hashes": {
+    "matched_external.py": "4aef7302bc1e1946816e42404f4ea46f5fee240e8631b691cd5a4c9149d2cb0e",
+    "release_control.py": "0dd5755308e5692b1307f660be1459fa1c5af4420d10488d024e0c35c4ab4ed8",
+    "score_ablation.py": "8ef53a7e954372bc9465774e0e5565b68e4f69f8b8882938d426b87e03f2b2d8"
+  },
+  "data_hashes": {
+    "information_concurrency.csv": "46b6a2e20293cc6da879a765bbcfa453dce41ce8d32d796b0723df64c9b810fe",
+    "information_fit.npz": "43037ca68084e20f6a5e0e48a0900d9db14b909bccba7f3ec30cb9ce823cd3a4",
+    "information_predictions.npz": "bc69942883304334b9aae59116373efa41f712b6ee63c67734ee05db431f6cb8",
+    "information_results.json.gz": "d77adf2500b7de5b6e0e0047558909df87c2772f2a4c951692088c224f08270f",
+    "information_times.npz": "4d83a199a9ef58eef7866b7b628f808f28a9e4b5486512c024b3b3450a43c5ee"
+  }
+}

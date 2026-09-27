@@ -1,0 +1,32 @@
+{
+ "fixed": "2026-09-26, before any outcome of these runs; retrospective on the previously exposed 225-task bank",
+ "protocol": [
+  "Review-response runs (v1.8), fixed 2026-09-26 before any outcome of these runs. Descriptive; no gate.",
+  "Development bank unless stated; same controllers, charges, scheduler, and cost as v1.4-v1.7.",
+  "",
+  "R4 (capacity-aware static split, no queue state). Static-prop: cloud share = cloud share of job capacity",
+  "under the calibration mean durations; requests ranked by the queue-free score difference J_c - J_e (mean RPC",
+  "time, mean fee, CARROT predicted shortfall), fixed random tie-break (seed 2026092602). Static-p: the same with",
+  "share p in {0.05, 0.10, ..., 0.90}; Static-best = the p with the lowest cost in hindsight for each reported",
+  "scope (baseline-favouring). Runs: four edge slots and one serial edge slot, all 12 conditions x 20 seeds; the",
+  "primary condition at loads {0.35, 0.5, 0.65, 0.8, 0.9} for both slot settings. Fresh450 (exploratory, not a",
+  "confirmatory hypothesis): the same Static-prop/Static-p runs on the 12 conditions for both slot settings and at",
+  "loads 0.35 and 0.9 (primary), using the frozen fresh bank.",
+  "",
+  "R2 (predictor accuracy). Noisy oracle: realized qualities plus fixed per-task Gaussian error with standard",
+  "deviation sigma in {0, 0.05, 0.1, 0.2, 0.3, 0.5}, clipped to [0, 1], used in CARROT-Queue (kappa 0.5), 12",
+  "conditions x 20 seeds, four edge slots. sigma = 0 must reproduce Oracle-Queue. Report cost against the",
+  "predictor's quality mean squared error, together with the CARROT, Mean, and RouteLLM-score predictors.",
+  "",
+  "R1 (serial edge as the measured-hardware setting). One serial edge slot: the quality-weight sweep beta in",
+  "{4, 8, 12, 16, 24, 36} for CARROT-Queue, FPI, Shortfall, Utility (12 x 20), the payload sweep {1, 2, 4, 8, 12}",
+  "for CARROT-Queue/Radio, Mean-Queue/Radio, Intrinsic, and loads 0.35 and 0.9 for Intrinsic, Shortfall, Utility,",
+  "CARROT-Queue, FPI (the other loads exist). Report whether each four-slot conclusion holds with one slot."
+ ],
+ "paths": 20820,
+ "fresh450_exploratory": {
+  "paths": 10840,
+  "location": "confirmation/exploratory_v18/",
+  "status": "exploratory, added after the confirmation; not a confirmatory hypothesis"
+ }
+}

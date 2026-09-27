@@ -1,0 +1,12 @@
+{
+  "config.json": "6798cba770ab3c70a0b861c7c3b4e9f035e8c3ce5a6a75e659a6d630018029a0",
+  "expected_results.json": "cf776070b227060730a1e439f768c2203dd78afb7e2fbb69a5e541932dd580d8",
+  "external_predictions.npz": "c4febc2a7a80cb3aa1056d56fe644c9092a086b55e548a5e7c7d5478e2e1a84d",
+  "prediction_times.npz": "201542f8a885d1eaa293f61a72e15f84a0fd170db188da7b07821d18a0ca772a",
+  "primary_latencies.npz": "fac4052685ba3a0e23b04b0fa2bfa0ad0cfb61cc51a56a325d368149a03459ac",
+  "quality_weights.npz": "8b7fef073d4dc6cdd62cb445d4f85cf4bca65cc198fb654ce7af304c2b69a237",
+  "responses.json.gz": "3081b219102348f9f23789b648957e92d7c437030919cdbc7233d561e4f89fd5",
+  "serving_state.npz": "0d261b9d84ecbbec30d15291cb0b7bc7dc4e53e299ec6101e0590426e85a058f",
+  "strengthening_plan.json": "ec10e1db262cd1d33b217ce19b9ee9213e25e540eb8f968ab50d9776a6d3b46c",
+  "strengthening_results.json.gz": "5754908a7185ff2bea9d8e1a5af6d6fcba76759789de506224a29d75ab338026"
+}

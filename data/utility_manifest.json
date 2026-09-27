@@ -1,0 +1,36 @@
+{
+  "schema": "fixed-queue-utility-controls-v1",
+  "sha256": {
+    "data/config.json": "6798cba770ab3c70a0b861c7c3b4e9f035e8c3ce5a6a75e659a6d630018029a0",
+    "data/expected_results.json": "cf776070b227060730a1e439f768c2203dd78afb7e2fbb69a5e541932dd580d8",
+    "data/responses.json.gz": "3081b219102348f9f23789b648957e92d7c437030919cdbc7233d561e4f89fd5",
+    "data/serving_state.npz": "0d261b9d84ecbbec30d15291cb0b7bc7dc4e53e299ec6101e0590426e85a058f",
+    "data/quality_weights.npz": "8b7fef073d4dc6cdd62cb445d4f85cf4bca65cc198fb654ce7af304c2b69a237",
+    "data/prediction_times.npz": "201542f8a885d1eaa293f61a72e15f84a0fd170db188da7b07821d18a0ca772a",
+    "data/external_predictions.npz": "c4febc2a7a80cb3aa1056d56fe644c9092a086b55e548a5e7c7d5478e2e1a84d",
+    "data/information_predictions.npz": "bc69942883304334b9aae59116373efa41f712b6ee63c67734ee05db431f6cb8",
+    "data/information_times.npz": "4d83a199a9ef58eef7866b7b628f808f28a9e4b5486512c024b3b3450a43c5ee",
+    "data/information_results.json.gz": "d77adf2500b7de5b6e0e0047558909df87c2772f2a4c951692088c224f08270f",
+    "data/information_manifest.json": "99e148def3b96723fc65280518f12eb9c063c428edcfc8181c9baf8af256feb7",
+    "data/utility_results.json.gz": "2be569fefa315407ae9a7f6b63efe2672b21c73deab6ec63741e42e0999d0310",
+    "data/utility_plan.json": "cde74f0b7431252d9a0d985020f34c969b166c08456110c2dd4408e05fe9e77d",
+    "data/utility_summary.json": "08cb5c989ec633b0c9e68f6315d804419222c75aaba70ec6d6adbbea907d5abc"
+  },
+  "source_sha256_lf": {
+    "qbr/__init__.py": "f04248bd283dc57ce219bfa44ba0a99583bc4804be74d195a12fc381ff4920f6",
+    "qbr/data.py": "32e8743b1498213c9070c913c8bf284df86387ef21c741f2aa46578bb1d600af",
+    "qbr/policy.py": "976e9b64f972b69ad64ac19d3d84bf4f1d36af537c6d1c0561428e90d385965b",
+    "qbr/replay.py": "cb560add3671808b7d28d9523d6743615f2918f2688dc40342c1ab0f8e496332",
+    "qbr/radio.py": "104a1aedc4bcdf83c41d599c91544497d34767df87c63683825697ddd60e960c",
+    "qbr/utility_controls.py": "a8b92fd0be0659d971237dd5ed00742c378ee631b3c460df3686f153ceabf0b9",
+    "utility_controls.py": "9ebed1dbc0456477402393057ae1c4f74a83618af9706056e2ede98f09ecc329",
+    "test_utility_controls.py": "f3793f86e6543fee79d17f4cc95b0b722d290da3568f8ed1808a49f4112b03f9"
+  },
+  "source_line_endings": "CRLF normalized to LF",
+  "physics": "Unchanged qbr replay",
+  "new_paths": 480,
+  "archived_reference_paths": 240,
+  "provider_calls": 0,
+  "archived_controller_AST_identical": true,
+  "fresh_task_confirmation": false
+}

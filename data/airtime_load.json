@@ -1,0 +1,30 @@
+{
+  "definition": "rho_air = lambda * E[bits] * mean_u 1/E_t[C_u]; E[bits] from calibration mean output sizes under the fixed output budgets, per-user mean capacity over 5 channel seeds (23924000-23924004), 2858 samples each",
+  "conditions": {
+    "bandwidth_10000": {
+      "lambda_per_s": 1.9518328640031397,
+      "mean_bits": 5231.470220588235,
+      "rho_air": 1.1936121609640542
+    },
+    "bandwidth_30000": {
+      "lambda_per_s": 1.9518328640031397,
+      "mean_bits": 5231.470220588235,
+      "rho_air": 0.3978707203213515
+    },
+    "primary": {
+      "lambda_per_s": 1.9518328640031397,
+      "mean_bits": 5231.470220588235,
+      "rho_air": 0.11936121609640545
+    },
+    "bandwidth_300000": {
+      "lambda_per_s": 1.9518328640031397,
+      "mean_bits": 5231.470220588235,
+      "rho_air": 0.03978707203213515
+    },
+    "bandwidth_1000000": {
+      "lambda_per_s": 1.9518328640031397,
+      "mean_bits": 5231.470220588235,
+      "rho_air": 0.011936121609640549
+    }
+  }
+}

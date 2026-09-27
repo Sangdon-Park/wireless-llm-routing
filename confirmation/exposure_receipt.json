@@ -1,0 +1,27 @@
+{
+ "schema": "fresh450_exposure_receipt_v1",
+ "authorized": true,
+ "at": "2026-09-25T13:43:23.872108+00:00",
+ "decision": "Sangdon Park authorized the Fresh450 confirmation on 2026-09-25 under the specified analysis and execution plans (P5).",
+ "opener": "Confirmation executor",
+ "scope": "Read fresh_inventory/acquisition_v2/run/sealed responses, receipts, intents, attempt artifacts and summary judge captures, only through build_bank.read_sealed (every read appended to exposure_access_log.jsonl), then run confirm.py once.",
+ "analysis_commitment_sha256": "ba08b692d1d27f7bcdffa91dcfa6f6ce22e23a24671b71d447baffd4a606c929",
+ "executor_commitment_sha256": "1e83f325ade26f1a189ef220bc4237c0c6cb724ab6e59d6da9e268772d58c5cd",
+ "prior_exposure": {
+  "ledger": "private-workspace/research-workspace/wcl_goal_20260923/confirmation_assembly_20260924/exposure_ledger_v1.json",
+  "ledger_sha256": "803dc3d27a27ca17c289ac002e5a5fa495f4c834005cc68e3104263a2b34afb5",
+  "known_ids": [
+   "ifbench_multiturn_ifbench_2473",
+   "ifbench_multiturn_ifbench_3018",
+   "xsum_38693675"
+  ],
+  "extent": "unknown (2026-09-23 incident)"
+ },
+ "prior_reads_by_this_opener": "None. Before this receipt the opener read only reservation inputs, acquisition source code and non-sealed run metadata (design.json, epochs, acquisition_receipt.json, epoch_baseline.json).",
+ "publication": {
+  "representation": "public_export",
+  "export_date": "2026-09-27",
+  "archived_record_sha256": "cfa4d90f21203d2d1ab8450064240f91e0f9a9caad4075ded9dbbac922eb381b",
+  "note": "Host paths and repository revision references are normalized for publication. Recorded dates describe the archived record, not this export. See publication_manifest.json for archived and public checksums."
+ }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "bao-public-replay-v1",
+  "sha256": {
+    "data/config.json": "6798cba770ab3c70a0b861c7c3b4e9f035e8c3ce5a6a75e659a6d630018029a0",
+    "data/expected_results.json": "cf776070b227060730a1e439f768c2203dd78afb7e2fbb69a5e541932dd580d8",
+    "data/responses.json.gz": "3081b219102348f9f23789b648957e92d7c437030919cdbc7233d561e4f89fd5",
+    "data/serving_state.npz": "0d261b9d84ecbbec30d15291cb0b7bc7dc4e53e299ec6101e0590426e85a058f",
+    "data/quality_weights.npz": "8b7fef073d4dc6cdd62cb445d4f85cf4bca65cc198fb654ce7af304c2b69a237",
+    "data/prediction_times.npz": "201542f8a885d1eaa293f61a72e15f84a0fd170db188da7b07821d18a0ca772a",
+    "data/external_predictions.npz": "c4febc2a7a80cb3aa1056d56fe644c9092a086b55e548a5e7c7d5478e2e1a84d",
+    "data/information_results.json.gz": "d77adf2500b7de5b6e0e0047558909df87c2772f2a4c951692088c224f08270f",
+    "data/strengthening_results.json.gz": "5754908a7185ff2bea9d8e1a5af6d6fcba76759789de506224a29d75ab338026",
+    "data/bao_plan.json": "ecfd2d57a5dedb5786d9543673f76bc66b9776542f8b54d2cf89ead97c0d2509",
+    "data/bao_results.json.gz": "b77738f646a778987c982512b6d6ce99280cd90ff8e2da74cec972d29cf6234a",
+    "data/bao_summary.json": "cda196dd6dbb9f747f981b7c4d516b279541a7370670b1d68634727083439a9c"
+  },
+  "source_sha256_lf": {
+    "qbr/__init__.py": "f04248bd283dc57ce219bfa44ba0a99583bc4804be74d195a12fc381ff4920f6",
+    "qbr/data.py": "32e8743b1498213c9070c913c8bf284df86387ef21c741f2aa46578bb1d600af",
+    "qbr/information_controls.py": "73a2c8843b387e02188e06537cdf6b77e383774ec1d00cf6c883baedb6abc0d2",
+    "qbr/policy.py": "976e9b64f972b69ad64ac19d3d84bf4f1d36af537c6d1c0561428e90d385965b",
+    "qbr/quality.py": "d033132007cdfe4e2cac333c9378d27ab5ec59bc11bde9b7a50ce5858c160f55",
+    "qbr/radio.py": "104a1aedc4bcdf83c41d599c91544497d34767df87c63683825697ddd60e960c",
+    "qbr/replay.py": "cb560add3671808b7d28d9523d6743615f2918f2688dc40342c1ab0f8e496332",
+    "qbr/strengthening.py": "2c234aa710f561f8d21271a15a0b8e67c3181f99b9dade6d983597753a49d5d2",
+    "qbr/bao.py": "0f2275871480278d05f160b60f2d3a32dbc65ff14eaad4534d7b01fa344aee19",
+    "qbr/bao_rule.py": "6e1b916632251646f4d9e26588d94770773a52320895115fc7305daa6e365ad6",
+    "reproduce_bao.py": "259fc74b03f5b10f5081c8327f83e81151030fa4fae59c4642fb7b5c706753aa",
+    "test_bao.py": "ca5bf3570c9a0b79fe4d270afcc64628046c8b7670102e473fa7aecc5909659d"
+  },
+  "source_line_endings": "CRLF normalized to LF for portable source verification",
+  "physics": "Unchanged qbr replay",
+  "formula": "p-alpha*(T_cloud-T_edge)>theta",
+  "radio_variant": "Archived debt correction; not release-aware",
+  "fixed_parameter_evaluation_reproducible": true,
+  "calibration_search_reproducible": false
+}

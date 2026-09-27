@@ -1,0 +1,44 @@
+{
+  "created_utc": "2026-09-23T08:59:58.010249+00:00",
+  "purpose": "Retrospective manuscript strengthening; locally fixed before these supplementary outcome runs, not a prospective registration.",
+  "unchanged": [
+    "225 paired tasks and all 450 responses including truncations",
+    "all 12 conditions and 20 main traffic seeds",
+    "calibration models, mixture coefficients, output budgets, achieved objective, fees, shared scheduler",
+    "original Service, Prompt, Calibrated, CARROT and RouteLLM results"
+  ],
+  "controls": {
+    "methods": [
+      "mean",
+      "radio_mean",
+      "radio_calibrated"
+    ],
+    "mean": "Use [q-E(Q|x)]_+ from the exact calibrated mixture, sharing the forest, serving score, and measured prediction latency with Calibrated.",
+    "radio": "Add [sum_u B_u/C_u + mean_bits_sm/C_user - (wait_m+mu_sm)]_+ to the unchanged score. B is visible undelivered bits; C is observed, possibly delayed capacity; mean_bits is from calibration.",
+    "no_tuning": "No new coefficients or selection of bandwidth/load/scenario based on outcomes.",
+    "cost": "Prediction delay and fees retained. Controller/scheduler CPU omitted for all methods as in the original comparison; report new controller wall time diagnostically."
+  },
+  "bootstrap": {
+    "replicates": 200,
+    "master_seed": 2026092301,
+    "traffic_seeds": [
+      23924000,
+      23924001
+    ],
+    "methods": [
+      "mean",
+      "prompt",
+      "calibrated"
+    ],
+    "unit": "Complete task identity, paired route outcomes and predictor outputs; 75 tasks sampled with replacement separately within each of three services.",
+    "coupling": "One resampled bank per replicate is shared across both fixed traffic paths, all 12 conditions, and all methods; rerun queues and wireless delivery.",
+    "conditional": "Calibration, predictors, two traffic/channel/target paths, and their recorded per-request overheads remain fixed. This is task-composition sensitivity, not independent tasks, retraining uncertainty, or a population-generalization guarantee.",
+    "report": "Primary and equally averaged 12-condition cost differences; unadjusted descriptive 2.5/97.5 percentiles. Publish every replicate, including unfavorable outcomes."
+  },
+  "source_sha256": {
+    "strengthen.py": "b56f6153e958116ef2954f0be12ccd0109a91ec40a626abe290c78bb28e457df",
+    "qbr/strengthening.py": "2c234aa710f561f8d21271a15a0b8e67c3181f99b9dade6d983597753a49d5d2",
+    "qbr/replay.py": "a9253c203da834d8f8b6d749bc6e157fd38cb652956e45dad7dd247c9b551dff",
+    "data/config.json": "6798cba770ab3c70a0b861c7c3b4e9f035e8c3ce5a6a75e659a6d630018029a0"
+  }
+}

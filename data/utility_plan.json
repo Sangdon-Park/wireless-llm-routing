@@ -1,0 +1,91 @@
+{
+  "methods": [
+    "utility_queue",
+    "shortfall_queue"
+  ],
+  "reference": "carrot_queue",
+  "seeds": [
+    23924000,
+    23924001,
+    23924002,
+    23924003,
+    23924004,
+    23924005,
+    23924006,
+    23924007,
+    23924008,
+    23924009,
+    23924010,
+    23924011,
+    23924012,
+    23924013,
+    23924014,
+    23924015,
+    23924016,
+    23924017,
+    23924018,
+    23924019
+  ],
+  "conditions": [
+    "primary",
+    "bandwidth_10000",
+    "bandwidth_30000",
+    "bandwidth_300000",
+    "bandwidth_1000000",
+    "users_8",
+    "users_32",
+    "load_0.35",
+    "load_0.8",
+    "csi_0.3",
+    "correlation_0.0",
+    "no_interference"
+  ],
+  "new_paths": 480,
+  "neutral_paths": 3,
+  "bank": "OLD225, retrospective and previously exposed",
+  "objective": "L+12*positive(target-realized_quality)+1000*all_charged_fees",
+  "weights": "Utility Eq5 transfer lambda=1000/12,delta=1/12; Shortfall same weights; no tuning.",
+  "primary_contrasts": [
+    "carrot_queue minus shortfall_queue",
+    "shortfall_queue minus utility_queue",
+    "carrot_queue minus utility_queue"
+  ],
+  "scopes": [
+    "primary",
+    "equal12",
+    "equal11_excluding_load_0.8",
+    "primary",
+    "bandwidth_10000",
+    "bandwidth_30000",
+    "bandwidth_300000",
+    "bandwidth_1000000",
+    "users_8",
+    "users_32",
+    "load_0.35",
+    "load_0.8",
+    "csi_0.3",
+    "correlation_0.0",
+    "no_interference"
+  ],
+  "success": "Descriptive screen only: CQ difference upper paired t95 below zero versus BOTH controls in primary/equal12/equal11. No independent-efficacy or external-optimum claim.",
+  "no_extensions": true,
+  "no_parameter_or_predictor_selection": true,
+  "provider_calls": 0,
+  "fresh_access": false,
+  "cost_limits": "Measured common head charged. Common controller/scheduler CPU remains omitted as in current OLD225 paper. Native TTFT/SFS not reproduced.",
+  "preflight_conditions": [
+    "primary",
+    "bandwidth_10000",
+    "load_0.8"
+  ],
+  "schema": "fixed-queue-utility-controls-v1",
+  "source_provenance_sha256": {
+    "original_study": "12f18a5eeaf0f0b8102c90746c390c4589df575d874af0b8a6371d758a06629c",
+    "original_design": "1364d888a889e24de6c36644178dc0553470ac3b02f88d5ff1ddee36097f96f7",
+    "original_records": "6b78a099c172cbb86b2d647dce0bb6abfa6021f824bddabe167f7a59d93c5c46",
+    "original_result": "cace625fa005daec55dd066eb8a792ce7108931bc46edb7ae4ef052e1d2d9f30",
+    "independent_audit": "2f7b32b968577942f68c95a2b9bd1fd60c9f45617bbc5d9f097cad655f2e2c63"
+  },
+  "archived_reference_paths": 240,
+  "new_task_responses": false
+}
